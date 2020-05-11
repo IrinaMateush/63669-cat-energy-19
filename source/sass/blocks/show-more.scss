@@ -1,0 +1,106 @@
+.show-more {
+  @include wrapper(210px, 320px, $white, 20px);
+  padding-bottom: 25px;
+  border-bottom: 1px solid $light-gray;
+  border-top: 1px solid $light-gray;
+  margin: 0 auto;
+  position: relative;
+
+  &::before {
+    @include pseudo(31px, 31px, 20px, 0, 0, 145px);
+    background: {
+      image: url("../../img/icon-plus-mobile.svg");
+      repeat: no-repeat;
+      position: center;
+    }
+    opacity: 0.2;
+  }
+}
+
+.show-more__action {
+  @include base-font(16px, 1.25);
+  text-decoration: none;
+  padding-top: 75px;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+
+.show-more__description {
+  @include base-font(12px, 1.33, $greyish-brown, $base-font);
+  margin: 0 auto;
+  padding-top: 2px;
+  padding-bottom: 16px;
+}
+
+.show-more__button {
+  @include grey-button;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+@media (min-width: $tablet-width) {
+  .show-more {
+    @include wrapper(431px, 324px, $white, 38px);
+    text-align: center;
+    border: 1px solid $light-gray;
+
+    &::before {
+      @include pseudo(61px, 61px, 55px, 0, 0, 133px);
+      background: {
+        image: url("../../img/icon-plus.svg");
+        repeat: no-repeat;
+        position: center;
+      }
+    }
+  }
+
+  .show-more__button {
+    @include grey-button;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .show-more__action {
+    @include base-font(20px, 1);
+    text-transform: uppercase;
+    padding-top: 165px;
+    max-width: 143px;
+    margin: 0 auto;
+  }
+
+  .show-more__description {
+    @include base-font(16px, 1.33, $greyish-brown, $base-font);
+    max-width: 175px;
+    margin: 0 auto;
+    padding-top: 12px;
+    padding-bottom: 66px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .show-more {
+    @include wrapper(431px, 245px, $white, 38px);
+    border: 1px solid $light-gray;
+
+    &::before {
+      @include pseudo(0, 0, 55px, 0, 0, 93px);
+    }
+  }
+
+  .show-more__button {
+    @include grey-button;
+    width: 145px;
+    margin: 20px auto;
+  }
+
+  .show-more__action {
+    padding-top: 162px;
+    padding-bottom: 12px;
+  }
+
+  .show-more__description {
+    padding-bottom: 65px;
+  }
+}

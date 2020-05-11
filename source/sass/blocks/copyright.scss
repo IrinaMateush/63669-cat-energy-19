@@ -1,0 +1,39 @@
+.copyright__text {
+  @include base-font(16px, 1, $greyish-brown, $base-font);
+  padding-top: 5px;
+  padding-right: 23px;
+}
+
+.copyright__links {
+  @include flex-row();
+  width: 100%;
+  text-decoration: none;
+  padding-top: 24px;
+  border-top: 1px solid $light-pink;
+  align-items: top;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+
+    svg {
+      stroke: $green;
+    }
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.copyright__logo-academy {
+  width: 27px;
+  height: 34px;
+}
+
+@media (min-width: $tablet-width) {
+  .copyright__links {
+    padding-top: 0;
+    border-top: none;
+  }
+}

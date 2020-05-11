@@ -1,0 +1,97 @@
+.site-list {
+  @include list-style();
+}
+
+.site-list__item {
+  border-bottom: 1px solid $light-gray;
+  padding-top: 24px;
+  padding-bottom: 20px;
+
+  a {
+    @include base-font(20px, 1, $black, $oswald-font, 500);
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+
+  &:first-child {
+    border-top: 1px solid $light-gray;
+
+    a {
+      padding-left: 0;
+    }
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .site-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .site-list__item {
+    border: none;
+
+    a {
+      @include base-font(18px, 1.39, $black-three, $oswald-font, 500);
+      margin-left: 36px;
+      border: none;
+    }
+
+    &:first-child {
+      border: none;
+    }
+  }
+
+  .site-list__item--active {
+    a {
+      border-bottom: 2px solid $green;
+      padding-bottom: 5px;
+    }
+  }
+
+  .page-header--green .site-list__item--active {
+    a {
+      border-color: $green;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .site-list__item {
+    padding-top: 20px;
+
+    a {
+      margin-left: 34px;
+    }
+  }
+
+  .site-list a {
+    @include base-font(20px, 1.25, $black-three, $oswald-font, 500);
+  }
+
+  .site-list--index a {
+    @include base-font(20px, 1.25, $white, $oswald-font, 500);
+  }
+
+  .site-list__item--active {
+    a {
+      border-color: $white;
+      padding-bottom: 5px;
+    }
+  }
+
+  .page-header--green .site-list__item--active {
+    a {
+      border-color: $green;
+    }
+  }
+}

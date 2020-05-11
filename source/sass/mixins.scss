@@ -1,0 +1,141 @@
+@mixin base-font(
+  $size,
+  $line-height: 1,
+  $color: $black,
+  $font: $oswald-font,
+  $weight: normal,
+  $letter-spacing: normal
+) {
+  font-family: $font;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  color: $color;
+  text-decoration: none;
+}
+
+@mixin title-font(
+  $size: 36px,
+  $line-height: 1.67,
+  $color: $black,
+  $font: $oswald-font,
+  $weight: normal,
+  $letter-spacing: normal
+) {
+  font-family: $font;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  color: $color;
+  text-decoration: none;
+}
+
+@mixin text-font(
+  $size: 14px,
+  $line-height: 1.29,
+  $color: $greyish-brown,
+  $font: $base-font,
+  $weight: normal,
+  $letter-spacing: normal
+) {
+  font-family: $font;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  color: $color;
+  text-decoration: none;
+}
+
+@mixin visually-hidden() {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  overflow: hidden;
+}
+
+@mixin list-style() {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin green-button {
+  @include base-font(16px, 1.25, $white);
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  background-color: $green;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    background-color: $leaf;
+  }
+
+  &:active {
+    background-color: $leaf;
+    color: rgba($white, 0.3);
+  }
+}
+
+@mixin grey-button {
+  @include base-font(16px, 1.25, $greyish-brown);
+  display: inline-block;
+  background-color: $middle-grey;
+  vertical-align: middle;
+  text-align: center;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    background-color: $light-gray;
+  }
+
+  &:active {
+    background-color: $leaf;
+    color: rgba($greyish-brown, 0.3);
+  }
+}
+
+@mixin wrapper($height, $width: 100%, $bg-color: $white, $padding: 20px) {
+  box-sizing: border-box;
+  padding-left: $padding;
+  padding-right: $padding;
+  width: $width;
+  min-height: $height;
+  background-color: $bg-color;
+  margin: 0 auto;
+}
+
+@mixin flex-row($justify-content: space-between) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: $justify-content;
+}
+
+@mixin flex-col() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin pseudo($width, $height, $top, $right, $bottom, $left) {
+  position: absolute;
+  display: block;
+  content: "";
+  width: $width;
+  height: $height;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}

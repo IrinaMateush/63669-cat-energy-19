@@ -1,0 +1,43 @@
+.map {
+  height: 362px;
+  position: relative;
+  z-index: 0;
+
+  iframe {
+    width: 100%;
+    height: 362px;
+    border: none;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .map__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    height: 362px;
+    z-index: -1;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .map {
+    height: 400px;
+
+    iframe {
+      height: 400px;
+    }
+
+    .map__image {
+      height: 400px;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .map {
+    @include wrapper(400px, 1440px, $white, 0);
+  }
+}

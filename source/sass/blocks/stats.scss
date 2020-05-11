@@ -1,0 +1,7 @@
+@media (min-width: $desktop-width) {
+  .stats {
+    @include base-font(16px, 1, $greyish-brown, $base-font);
+    font-weight: normal;
+    display: inline-block;
+  }
+}
