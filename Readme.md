@@ -1,7 +1,7 @@
 # Личный проект «Кэт энерджи» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Ирина Матэуш](https://up.htmlacademy.ru/adaptive/19/user/63669).
-* Наставник: `Неизвестно`.
+* Наставник: `Без наставника`.
 
 ---
 
