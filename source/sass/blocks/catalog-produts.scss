@@ -17,6 +17,11 @@
   text-transform: uppercase;
   max-width: 75px;
   margin: 0;
+
+  a {
+    text-decoration: none;
+    color: $black;
+  }
 }
 
 .catalog-produts__property {
