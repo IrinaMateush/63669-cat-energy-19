@@ -107,6 +107,7 @@
 @media (min-width: $desktop-width) {
   .catalog-produts__list {
     @include wrapper(1005px, 1220px, $white, 0);
+    height: 1005px;
     margin-top: 46px;
     margin-bottom: 82px;
   }
