@@ -32,7 +32,7 @@
 @media (min-width: $tablet-width) {
   .partners__container {
     @include wrapper(196px, 100%, $white, 71px);
-    padding-top: 67px;
+    padding-top: 61px;
   }
 
   .partners__invite {
@@ -64,13 +64,15 @@
 
   .partners__container {
     @include wrapper(201px, 570px, $white, 76px);
-    padding-top: 69px;
+    padding-top: 67px;
     bottom: -296px;
     left: 110px;
     z-index: 1;
+    padding-right: 89px;
   }
 
   .partners__address {
     font-style: normal;
+    text-align: left;
   }
 }
