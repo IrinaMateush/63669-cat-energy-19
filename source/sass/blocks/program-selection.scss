@@ -99,99 +99,104 @@
   user-select: none;
 }
 
-.program-selection__checkbox[type="checkbox"],
-.program-selection__radio[type="radio"] {
-  position: absolute;
-  appearance: none;
+.program-selection__checkbox,
+.program-selection__radio {
   outline: none;
+	position: absolute;
+	clip: rect(1px, 1px, 1px, 1px);
+	padding:0;
+	border:0;
+	height: 1px;
+	width: 1px;
+  overflow: hidden;
+  top: 0;
 }
 
-.program-selection__checkbox[type="checkbox"] {
-  &::before {
-    content: "";
-    position: absolute;
-    width: 28px;
-    height: 28px;
-    border: 1px solid $light-pink;
-    left: 1px;
-    top: -3px;
-  }
+.program-selection__checkbox--custom {
+  display: inline-block;
+  position: relative;
+  font-size: 23px;
+  width: 28px;
+  height: 28px;
+  border: 1px solid $light-pink;
+  left: 1px;
+  top: 30px;
+}
 
+[type=checkbox]:checked + .program-selection__checkbox--custom:before {
+  content: '';
+  position: absolute;
+  font-size: 23px;
+  width: 22px;
+  height: 17px;
+  top: 7px;
+  left: 4px;
+  background: {
+    color: $white;
+    image: url("../../img/icon-tick.svg");
+    repeat: no-repeat;
+    position: 0 0;
+  }
+}
+
+/*
   &:focus::before {
     border: 1px solid $greyish-brown;
   }
+*/
 
-  &:checked::after {
-    content: "";
-    position: absolute;
-    width: 22px;
-    height: 17px;
-    background-color: $green;
-    top: 4px;
-    left: 5px;
-    background: {
-      color: $white;
-      image: url("../../img/icon-tick.svg");
-      repeat: no-repeat;
-      position: 0 0;
-    }
-  }
+.program-selection__radio--custom {
+  display: inline-block;
+  position: relative;
+  width: 28px;
+  height: 28px;
+  border: 1px solid $light-pink;
+  left: 8px;
+  top: 17px;
+  border-radius: 50%;
 }
 
-.program-selection__radio[type="radio"] {
-  &::before {
-    content: "";
-    position: absolute;
-    width: 28px;
-    height: 28px;
-    border: 1px solid $light-pink;
-    left: 8px;
-    top: -7px;
-    border-radius: 50%;
-  }
-
-  &:focus::before {
-    border: 1px solid $greyish-brown;
-  }
-
-  &:checked::after {
-    content: "";
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    left: 17px;
-    top: 2px;
-    background-color: $green;
-    border-radius: 50%;
-  }
+[type=radio]:checked + .program-selection__radio--custom:before {
+  content: '';
+  position: absolute;
+  font-size: 23px;
+  width: 12px;
+  height: 12px;
+  left: 8px;
+  top: 8px;
+  background-color: $green;
+  border-radius: 50%;
 }
 
 .program-selection__extra {
   padding-left: 20px;
   padding-right: 0;
 
-  .program-selection__extra-block {
-    margin-top: 35px;
-  }
+  //.program-selection__extra-block {
+  //  margin-top: 35px;
+ // }
 }
 
 .program-selection__goal-group {
   .program-selection__label {
     padding-left: 53px;
+    margin-top: -10px;
   }
 }
 
 .program-selection__extra-group {
+  max-height: 30px;
+
   .program-selection__label {
     padding-left: 47px;
+    margin-bottom: 14px;
+    margin-top: 0px;
   }
 }
 
 .program-selection__goal-group,
 .program-selection__extra-group {
   .program-selection__label {
-    margin-bottom: 25px;
-
     &:hover::before,
     &:focus::before {
       border: 1px solid $pinkish-grey-two;
@@ -233,14 +238,13 @@
   border: none;
   width: 280px;
   padding: 10px;
-  margin: 4px 0 0 20px;
+  margin: 38px 0 0 20px;
 }
 
 .program-selection__goal {
   border: 1px solid $light-gray;
   box-sizing: border-box;
-  padding-top: 27px;
-  padding-bottom: 0;
+  padding-bottom: 25px;
   margin: 0 0 30px 0;
 }
 
@@ -436,6 +440,7 @@
     }
   }
 
+  //пад
   .program-selection__radio[type="radio"] {
     &::before {
       width: 38px;
@@ -480,6 +485,13 @@
     @include wrapper(1300px, 1440px, $white, 0);
   }
 
+
+  .program-selection__radio,
+  .program-selection__checkbox {
+    width: 40px;
+    height: 40px;
+  }
+    //десктоп
   .program-selection__radio[type="radio"] {
     &::before {
       left: -4px;
@@ -501,6 +513,8 @@
       left: 8px;
     }
   }
+
+
 
   .program-selection__block {
     @include flex-row();
@@ -532,12 +546,6 @@
       padding-left: 56px;
       margin-bottom: 18px;
     }
-  }
-
-  .program-selection__radio,
-  .program-selection__checkbox {
-    width: 40px;
-    height: 40px;
   }
 
   .program-selection__textarea {
