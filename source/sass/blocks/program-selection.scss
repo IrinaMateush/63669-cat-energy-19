@@ -101,15 +101,7 @@
 
 .program-selection__checkbox,
 .program-selection__radio {
-  outline: none;
-  position: absolute;
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0;
-  border: 0;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  top: 0;
+  @include visually-hidden();
 }
 
 .program-selection__checkbox--custom {
@@ -139,11 +131,6 @@
   }
 }
 
-/*
-  &:focus::before {
-    border: 1px solid $greyish-brown;
-  }
-*/
 
 .program-selection__radio--custom {
   display: inline-block;

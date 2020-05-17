@@ -68,10 +68,6 @@
     text-align: center;
   }
 
-  .site-list--closed {
-    display: none;
-  }
-
   .main-nav--opened {
     .main-nav__wrapper {
       @include wrapper(199px, 100%, $white, 0);
