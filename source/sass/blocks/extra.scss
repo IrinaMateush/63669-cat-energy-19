@@ -4,12 +4,12 @@
 
 .extra__title {
   @include title-font(24px, 1);
-  padding: 23px 0 18px 0;
+  padding: 26px 0 18px 0;
   position: relative;
   margin: 0;
 
   &::after {
-    @include pseudo(53px, 3px, 35px, 0, 0, 248px);
+    @include pseudo(53px, 3px, 40px, 0, 0, 248px);
     background-color: $green;
   }
 }
@@ -153,9 +153,9 @@
 
     p {
       @include flex-row();
-      width: 279px;
-      padding-left: 155px;
-      padding-top: 0;
+      width: 288px;
+      padding-left: 120px;
+      padding-top: 5px;
     }
   }
 
@@ -169,9 +169,8 @@
   }
 
   .extra__produts-button {
-    width: 222px;
-    margin-bottom: 0;
-    margin-left: 48px;
+    width: 225px;
+    margin: 0;
   }
 
   .extra__title {
