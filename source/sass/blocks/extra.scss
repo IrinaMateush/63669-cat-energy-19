@@ -143,6 +143,8 @@
 
   .extra__produts-item {
     @include wrapper(73px, 894px, $white, 0);
+    height: 73px;
+    line-height: 73px;
     border-left: none;
     border-right: none;
     margin-bottom: 0;
